@@ -1,0 +1,1 @@
+export{b as sidewalkSpot}from"./Garage-Dtr0Nt93.js";
