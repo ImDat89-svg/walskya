@@ -1,0 +1,89 @@
+#hud .hud-top-left {
+  top: max(18px, env(safe-area-inset-top, 0px));
+  left: max(18px, env(safe-area-inset-left, 0px));
+}
+
+#hud .hud-top-right {
+  top: max(18px, env(safe-area-inset-top, 0px));
+  right: max(18px, env(safe-area-inset-right, 0px));
+}
+
+#hud .hud-bottom-right {
+  right: max(18px, env(safe-area-inset-right, 0px));
+  bottom: max(18px, env(safe-area-inset-bottom, 0px));
+}
+
+#hud .hud-weapon {
+  right: max(18px, env(safe-area-inset-right, 0px));
+}
+
+body:not(.high-contrast) #hud .hud-health {
+  border-left: 2px solid var(--health);
+}
+
+body:not(.high-contrast) #hud .hud-money {
+  border-left: 2px solid var(--money);
+}
+
+#hud .hud-health-num,
+#hud .hud-money-value,
+#hud .hud-speed-value {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  #hud .hud-top-left {
+    top: max(12px, env(safe-area-inset-top, 0px));
+    left: max(12px, env(safe-area-inset-left, 0px));
+    gap: 6px;
+  }
+
+  #hud .hud-top-right {
+    top: max(12px, env(safe-area-inset-top, 0px));
+    right: max(12px, env(safe-area-inset-right, 0px));
+  }
+
+  #hud .hud-bottom-right {
+    right: max(12px, env(safe-area-inset-right, 0px));
+    bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  }
+
+  #hud .hud-health-bar,
+  #hud .hud-armor {
+    width: clamp(7rem, 34vw, 9rem);
+  }
+
+  #hud .hud-money {
+    gap: 4px;
+    font-size: 1.2em;
+  }
+
+  #hud .hud-top-right {
+    font-size: 1.4em;
+  }
+
+  #hud .hud-bottom-right {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  #hud .hud-top-left,
+  #hud .hud-top-right {
+    top: max(8px, env(safe-area-inset-top, 0px));
+  }
+
+  #hud .hud-top-left {
+    left: max(8px, env(safe-area-inset-left, 0px));
+  }
+
+  #hud .hud-top-right {
+    right: max(8px, env(safe-area-inset-right, 0px));
+    font-size: 1.25em;
+  }
+
+  #hud .hud-health-bar,
+  #hud .hud-armor {
+    width: clamp(6.5rem, 32vw, 7.5rem);
+  }
+}

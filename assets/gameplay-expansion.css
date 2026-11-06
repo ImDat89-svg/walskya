@@ -1,0 +1,121 @@
+#side-activities {
+  position: fixed;
+  z-index: 20;
+  left: max(12px, env(safe-area-inset-left, 0px));
+  bottom: max(210px, calc(190px + env(safe-area-inset-bottom, 0px)));
+  color: #fff;
+  font: 600 14px/1.45 "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  text-shadow: 0 1px 3px #000;
+  pointer-events: none;
+}
+
+#side-activities[hidden],
+#side-activities [hidden] {
+  display: none !important;
+}
+
+#side-activities button {
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid #ffffff36;
+  border-radius: 8px;
+  color: #fff;
+  background: #101714ed;
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#side-activities button:hover:not(:disabled),
+#side-activities button:focus-visible {
+  border-color: #3ddc97;
+  outline: 2px solid #3ddc97;
+  outline-offset: 2px;
+}
+
+#side-activities button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+#side-activities .side-activities-panel {
+  display: grid;
+  gap: 8px;
+  width: min(300px, calc(100vw - 32px));
+  max-height: min(60vh, 480px);
+  overflow: auto;
+  margin-bottom: 8px;
+  padding: 14px;
+  border: 1px solid #ffffff30;
+  border-radius: 10px;
+  background: #090c0bf2;
+  box-shadow: 0 8px 28px #0009;
+  pointer-events: auto;
+}
+
+#side-activities h2,
+#side-activities h3,
+#side-activities p {
+  margin: 0;
+}
+
+#side-activities h2 {
+  color: #f1c40f;
+  font-size: 15px;
+}
+
+#side-activities h3 {
+  color: #3ddc97;
+  font-size: 13px;
+}
+
+#side-activities .side-job-status {
+  color: #d7e3dc;
+  font-size: 12px;
+}
+
+#side-activities .side-collectible-progress {
+  color: #d7e3dc;
+  font-size: 12px;
+}
+
+#side-activities .side-service-status {
+  color: #d7e3dc;
+  font-size: 12px;
+}
+
+#side-activities .side-loan-options {
+  display: grid;
+  gap: 6px;
+}
+
+#side-activities .side-business {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+#side-activities .side-business p {
+  color: #b7c3bb;
+  font-size: 11px;
+}
+
+#side-activities .side-business button {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+@media (max-width: 600px) {
+  #side-activities {
+    bottom: max(190px, calc(170px + env(safe-area-inset-bottom, 0px)));
+  }
+}
+
+body.high-contrast #side-activities button,
+body.high-contrast #side-activities .side-activities-panel {
+  color: #fff;
+  border: 2px solid #fff;
+  background: #000;
+  box-shadow: none;
+}
